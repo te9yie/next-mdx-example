@@ -1,3 +1,14 @@
+# Memo
+
+http://localhost:3000/First%20Post
+
+```
+[remark-wiki-link] Warning: please upgrade to remark 13 to use this plugin
+```
+
+と警告が出て、Wiki Link Pluginが使えない。
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
