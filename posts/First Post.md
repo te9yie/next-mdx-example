@@ -1,5 +1,5 @@
 This is first post.
 
-## Header 2
+<MyH2>Header 2</MyH2>
 
 [Index](/)
