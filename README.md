@@ -8,6 +8,8 @@ http://localhost:3000/First%20Post
 
 と警告が出て、Wiki Link Pluginが使えない。
 
+`package.json`でバージョンを整えたら警告が消えた。
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

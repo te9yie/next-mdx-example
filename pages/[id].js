@@ -1,19 +1,12 @@
-import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
-import { wikiLinkPlugin } from "remark-wiki-link";
+import Body from "../components/Body";
+import { components } from "../libs/mdx-components";
+import { renderMdxToString } from "../libs/mdx";
 import { getAllPostIds, getPostData } from "../libs/post";
-
-const components = {};
-const remarkPlugins = [wikiLinkPlugin];
 
 const PostPage = ({ postData }) => {
   const content = hydrate(postData.content, { components });
-  return (
-    <>
-      <h1>{postData.id}</h1>
-      <div>{content}</div>
-    </>
-  );
+  return <Body title={`${postData.id}`}>{content}</Body>;
 };
 
 export const getStaticPaths = async () => {
@@ -26,12 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const postData = getPostData(params.id);
-  postData.content = await renderToString(postData.content, {
-    components,
-    mdxOptions: {
-      remarkPlugins,
-    },
-  });
+  postData.content = await renderMdxToString(postData.content);
   return {
     props: {
       postData,
